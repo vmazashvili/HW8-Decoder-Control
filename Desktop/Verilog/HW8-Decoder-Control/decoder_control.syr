@@ -1,0 +1,318 @@
+Release 14.5 - xst P.58f (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: decoder_control.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "decoder_control.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "decoder_control"
+Output Format                      : NGC
+Target Device                      : xc3s250e-4-vq100
+
+---- Source Options
+Top Module Name                    : decoder_control
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "decoder_control.v" in library work
+Module <decoder_control> compiled
+No errors in compilation
+Analysis of file <"decoder_control.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <decoder_control> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <decoder_control>.
+Module <decoder_control> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <decoder_control>.
+    Related source file is "decoder_control.v".
+WARNING:Xst:647 - Input <flag> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <instr<31:28>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4x2-bit ROM for signal <op$rom0000>.
+    Found 1-bit 4-to-1 multiplexer for signal <data_mem>.
+    Found 1-bit 4-to-1 multiplexer for signal <data_mem_en>.
+    Found 1-bit 4-to-1 multiplexer for signal <data_w_en>.
+    Found 4-bit 4-to-1 multiplexer for signal <dest_reg>.
+    Found 1-bit 4-to-1 multiplexer for signal <flag_en>.
+    Found 24-bit 4-to-1 multiplexer for signal <imm_instr>.
+    Found 12-bit 4-to-1 multiplexer for signal <imm_instr_mem>.
+    Found 4-bit 4-to-1 multiplexer for signal <src_addr>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred  48 Multiplexer(s).
+Unit <decoder_control> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x2-bit ROM                                           : 1
+# Multiplexers                                         : 8
+ 1-bit 4-to-1 multiplexer                              : 4
+ 12-bit 4-to-1 multiplexer                             : 1
+ 24-bit 4-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 4x2-bit ROM                                           : 1
+# Multiplexers                                         : 8
+ 1-bit 4-to-1 multiplexer                              : 4
+ 12-bit 4-to-1 multiplexer                             : 1
+ 24-bit 4-to-1 multiplexer                             : 1
+ 4-bit 4-to-1 multiplexer                              : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <decoder_control> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block decoder_control, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : decoder_control.ngr
+Top Level Output File Name         : decoder_control
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 92
+
+Cell Usage :
+# BELS                             : 49
+#      LUT2                        : 9
+#      LUT3                        : 27
+#      LUT4                        : 13
+# IO Buffers                       : 84
+#      IBUF                        : 28
+#      OBUF                        : 56
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s250evq100-4 
+
+ Number of Slices:                       28  out of   2448     1%  
+ Number of 4 input LUTs:                 49  out of   4896     1%  
+ Number of IOs:                          92
+ Number of bonded IOBs:                  84  out of     66   127% (*) 
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 7.479ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 161 / 56
+-------------------------------------------------------------------------
+Delay:               7.479ns (Levels of Logic = 4)
+  Source:            instr<22> (PAD)
+  Destination:       data_w_en (PAD)
+
+  Data Path: instr<22> to data_w_en
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.706  instr_22_IBUF (cmd_1_OBUF)
+     LUT3:I0->O            1   0.704   0.455  Mmux_data_w_en1_SW0 (N3)
+     LUT4:I2->O            1   0.704   0.420  Mmux_data_w_en1 (data_w_en_OBUF)
+     OBUF:I->O                 3.272          data_w_en_OBUF (data_w_en)
+    ----------------------------------------
+    Total                      7.479ns (5.898ns logic, 1.581ns route)
+                                       (78.9% logic, 21.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.00 secs
+ 
+--> 
+
+Total memory usage is 4503644 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
